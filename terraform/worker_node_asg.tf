@@ -43,7 +43,7 @@ resource "aws_autoscaling_group" "books" {
   max_size             = 2
   min_size             = 1
   name                 = "terraform-eks-books"
-  vpc_zone_identifier  = ["${aws_subnet.books.*.id}"]
+  vpc_zone_identifier  = "${aws_subnet.books.*.id}"
 
   tag {
     key                 = "Name"
