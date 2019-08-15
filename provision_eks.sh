@@ -19,6 +19,7 @@ terraform init -backend-config="key=state/books/eks_backend_config"
 terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../secret.tfvars"
 popd
 
+mkdir ~/terraform-books/
 mkdir ~/terraform-books/output/
 
 kubeconfig=$(terraform output "kubeconfig")
