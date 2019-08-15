@@ -15,7 +15,7 @@ resource "aws_subnet" "books" {
   count = 2
 
   availability_zone = "${data.aws_availability_zones.available.names[count.index]}"
-  cidr_block        = replace("${var.subnet_cidr_block}", "/(\d{1,3}\.d{1,3}\.)d{1,3}(\.d{1,3})\/\d{1,2}/", "$1${count.index}$2")
+  cidr_block        = replace("${var.subnet_cidr_block}", "/(\\d{1,3}\\.\\d{1,3})\\.\\d{1,3}(\\.\\d{1,3}\\/\\d{1,2})/", "$1.${count.index}$2")
   vpc_id            = "${aws_vpc.books.id}"
 
   tags = "${
