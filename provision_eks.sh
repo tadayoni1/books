@@ -16,5 +16,5 @@ fi
 pushd terraform
 terraform init -backend-config="key=state/books/eks_backend_config"
 
-terraform ${TERRAFORM_MODE} -var-file="variables.tfvars"
+terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../secret.tfvars"
 popd
