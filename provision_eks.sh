@@ -18,3 +18,11 @@ terraform init -backend-config="key=state/books/eks_backend_config"
 
 terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../secret.tfvars"
 popd
+
+mkdir ~/terraform-books/output/
+
+kubeconfig=$(terraform output "kubeconfig")
+config_map_aws_auth=$(terraform output "config_map_aws_auth")
+
+echo $kubeconfig > ~/terraform-books/output/kubeconfig
+echo $config_map_aws_auth > ~/terraform-books/output/config_map_aws_auth
