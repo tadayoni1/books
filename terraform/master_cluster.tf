@@ -10,5 +10,8 @@ resource "aws_eks_cluster" "books" {
   depends_on = [
     "aws_iam_role_policy_attachment.books-cluster-AmazonEKSClusterPolicy",
     "aws_iam_role_policy_attachment.books-cluster-AmazonEKSServicePolicy",
+    "aws_subnet.books",
+    "aws_security_group.books-cluster",
+    "aws_iam_role.books-cluster"
   ]
 }
