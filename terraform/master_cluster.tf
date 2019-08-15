@@ -4,7 +4,7 @@ resource "aws_eks_cluster" "books" {
 
   vpc_config {
     security_group_ids = ["${aws_security_group.books-cluster.id}"]
-    subnet_ids         = ["${aws_subnet.books.*.id}"]
+    subnet_ids         = "${aws_subnet.books.*.id}"
   }
 
   depends_on = [
