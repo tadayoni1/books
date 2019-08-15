@@ -1,3 +1,4 @@
+variable aws_region {}
 variable "cluster-name" {
   default = "terraform-eks-books"
   type    = "string"
