@@ -28,7 +28,7 @@ resource "aws_launch_configuration" "books" {
   iam_instance_profile        = "${aws_iam_instance_profile.books-node.name}"
   image_id                    = "${data.aws_ami.eks-worker.id}"
   instance_type               = "${var.launch_configuration_instance_type}"
-  name_prefix                 = "terraform-eks-books"
+  name_prefix                 = "terraform-eks-books-"
   security_groups             = ["${aws_security_group.books-node.id}"]
   user_data_base64            = "${base64encode(local.books-node-userdata)}"
 
