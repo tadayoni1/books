@@ -11,6 +11,7 @@ A workstation either local or on aws and install the follwoing
 4. python
 5. python-pip
 6. docker-py
+7. boto3
 
 
 Web api source: https://github.com/rmotr/flask-api-example
