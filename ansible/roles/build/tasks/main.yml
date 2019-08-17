@@ -1,0 +1,6 @@
+---
+- name: Build image
+  docker_image:
+    name: "{{docker_name}}"
+    path: ../python/
+    state:  build
