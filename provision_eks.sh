@@ -21,7 +21,7 @@ terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../secret
 if [ $TERRAFORM_MODE == 'apply' ]; then
 mkdir ~/terraform-books/
 mkdir ~/terraform-books/output/
-$(terraform output "kubeconfig" > ~/terraform-books/output/kubeconfig)
-$(terraform output "config_map_aws_auth" > ~/terraform-books/output/config_map_aws_auth)
+$(terraform output "kubeconfig" > ~/terraform-books/output/kubeconfig.yml)
+$(terraform output "config_map_aws_auth" > ~/terraform-books/output/config_map_aws_auth.yml)
 fi
 popd
