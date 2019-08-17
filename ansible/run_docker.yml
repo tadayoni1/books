@@ -1,4 +1,12 @@
 ---
+- name: ecs login
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+   - shell: "$(aws ecr get-login --no-include-email --region us-west-2)"
+
 - hosts: localhost
   roles:
     - build
+    - push2ecr
