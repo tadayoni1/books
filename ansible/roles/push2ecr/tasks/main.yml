@@ -1,0 +1,11 @@
+---
+- name: create ecr_repository "{{repo_name}}"
+  ecs_ecr: name="{{repo_name}}"
+  register: my_repo
+
+- name: docker push
+  docker_image:
+    name: "{{docker_name}}:{{docker_image_version}}"
+    repository: "{{my_repo.repository.repositoryUri}}"
+    source: local
+    push: yes

@@ -1,3 +1,4 @@
 ---
-docker_tag: tirganbooks:latest
+docker_tag: tigranbooks
 docker_name: tirganbooks
+docker_image_version: "v1"

@@ -2,6 +2,6 @@
 - name: Build image
   docker_image:
     name: "{{docker_name}}"
-    tag: "{{docker_tag}}"
+    tag: "{{docker_image_version}}"
     path: ../python/
     state:  build
