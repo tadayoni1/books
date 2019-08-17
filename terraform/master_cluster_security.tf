@@ -46,7 +46,7 @@ resource "aws_security_group" "books-cluster" {
 
 # Allow inbound traffic from your local workstation external IP to the Kubernetes.
 resource "aws_security_group_rule" "books-cluster-ingress-workstation-https" {
-  cidr_blocks       = ["${var.my_workstation_ip}"]
+  cidr_blocks       = "${var.my_workstations_ip}"
   description       = "Allow workstation to communicate with the cluster API Server"
   from_port         = 443
   protocol          = "tcp"

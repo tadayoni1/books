@@ -18,7 +18,7 @@ terraform init -backend-config="key=state/books/eks_backend_config"
 
 terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../secret.tfvars"
 
-if [ $TERRAFORM_MODE == 'apply']; then
+if [ $TERRAFORM_MODE == 'apply' ]; then
 mkdir ~/terraform-books/
 mkdir ~/terraform-books/output/
 $(terraform output "kubeconfig" > ~/terraform-books/output/kubeconfig)
