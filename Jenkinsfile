@@ -6,7 +6,8 @@ pipeline {
   stages {
     stage('Install Requirements') {
       steps {
-        sh '''echo ${SHELL}
+        sh '''#!/bin/bash
+echo ${SHELL}
 [ -d venv ] && rm -rf venv
 #virtualenv --python=python2.7 venv
 virtualenv venv
