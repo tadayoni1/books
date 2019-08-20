@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-      VIRTUAL_ENV = "${env.WORKSPACE}/venv"
-  }
   stages {
     stage('Install Requirements') {
       steps {
@@ -18,5 +15,16 @@ pip install -r python/requirements.txt
 '''
       }
     }
+    stage('Test') {
+      steps {
+        sh '''#. venv/bin/activate
+export PATH=${VIRTUAL_ENV}/bin:${PATH}
+cd python
+make test'''
+      }
+    }
+  }
+  environment {
+    VIRTUAL_ENV = "${env.WORKSPACE}/venv"
   }
 }
