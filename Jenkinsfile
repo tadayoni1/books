@@ -23,6 +23,11 @@ cd python
 make test'''
       }
     }
+    stage('Build Docker') {
+      steps {
+        sh 'ansible-playbook ansible\\build_docker.yml'
+      }
+    }
   }
   environment {
     VIRTUAL_ENV = "${env.WORKSPACE}/venv"
