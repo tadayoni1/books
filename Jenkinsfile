@@ -12,6 +12,7 @@ virtualenv venv
 export PATH=${VIRTUAL_ENV}/bin:${PATH}
 pip install --upgrade pip
 pip install -r python/requirements.txt
+pip install docker-py
 '''
       }
     }
