@@ -5,13 +5,6 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 echo ${SHELL}
-apt-get update
-apt-get upgrade -y
-apt install virtualenv
-apt install python-pip
-apt-add-repository ppa:ansible/ansible
-apt-get update
-apt-get install ansible -y
 [ -d venv ] && rm -rf venv
 #virtualenv --python=python2.7 venv
 virtualenv venv
