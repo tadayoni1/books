@@ -10,9 +10,8 @@ echo ${SHELL}
 virtualenv venv
 #. venv/bin/activate
 export PATH=${VIRTUAL_ENV}/bin:${PATH}
-pip install --upgrade pip
-pip install -r python/requirements.txt
-pip install docker-py
+pip3 install --upgrade pip3
+pip3 install -r python/requirements.txt
 '''
       }
     }
