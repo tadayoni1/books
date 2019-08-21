@@ -6,6 +6,8 @@ pipeline {
         sh '''#!/bin/bash
 pip3 install --upgrade pip3
 pip3 install -r python/requirements.txt
+pip3 install ansible
+pip3 install docker
 '''
       }
     }
