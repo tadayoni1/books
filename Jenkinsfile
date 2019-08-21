@@ -19,9 +19,7 @@ make test'''
     }
     stage('Build Docker') {
       steps {
-        sh '''docker --version
-docker image ls
-ansible-playbook ansible/build_docker.yml -e "ansible_python_interpreter=/usr/bin/python3" -u ubuntu'''
+        sh 'ansible-playbook ansible/build_docker.yml -e "ansible_python_interpreter=/usr/bin/python3" -u ubuntu'
       }
     }
   }
