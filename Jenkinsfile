@@ -12,6 +12,12 @@ virtualenv venv
 export PATH=${VIRTUAL_ENV}/bin:${PATH}
 pip3 install --upgrade pip3
 pip3 install -r python/requirements.txt
+pip3 list
+pip list
+docker --version
+ansible --version
+python --version
+python3 --version
 '''
       }
     }
