@@ -22,5 +22,10 @@ make test'''
         sh 'ansible-playbook ansible/build_docker.yml -e "ansible_python_interpreter=/usr/bin/python3"'
       }
     }
+    stage('Push Docker') {
+      steps {
+        sh 'ansible-playbook ansible/push_docker.yml -e "ansible_python_interpreter=/usr/bin/python3"'
+      }
+    }
   }
 }
