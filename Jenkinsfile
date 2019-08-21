@@ -22,7 +22,7 @@ make test'''
         sh '''docker --version
 docker ps
 docker image ls
-ansible-playbook ansible/build_docker.yml  -e "ansible_python_interpreter=/usr/bin/python3"'''
+ansible-playbook ansible/build_docker.yml -e "ansible_python_interpreter=/usr/bin/python3" -u ubuntu'''
       }
     }
   }
