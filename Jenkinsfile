@@ -20,8 +20,10 @@ make test'''
     }
     stage('Push Docker') {
       steps {
-        sh 'ansible-playbook ansible/push_docker.yml'
+        sh '''withAWS(region:\'us-west-2\', credentials: \'aws-books\') {
+  ansible-playbook ansible/push_docker.yml
+}'''
+        }
       }
     }
   }
-}
