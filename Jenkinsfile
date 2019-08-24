@@ -4,7 +4,6 @@ pipeline {
     stage('Install Requirements') {
       steps {
         sh '''#!/bin/bash
-python -m pip uninstall pip
 pip install -r python/requirements.txt'''
       }
     }
