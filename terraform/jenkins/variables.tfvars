@@ -1,5 +1,6 @@
 # General
 EnvironmentName                    = "books"
+aws_region                         = "us-west-2"
 
 # Jenkins
 jenkins_launch_configuration_instance_type = "m4.large"
