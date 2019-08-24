@@ -4,7 +4,6 @@ pipeline {
     stage('Install Requirements') {
       steps {
         sh '''#!/bin/bash
-pip install --upgrade pip
 pip install -r python/requirements.txt'''
       }
     }
