@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  environment {
+    AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+    AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+  }
   stages {
     stage('Install Requirements') {
       steps {
@@ -20,9 +24,7 @@ make test'''
     }
     stage('Push Docker') {
       steps {
-        sh '''withAWS(region:\'us-west-2\', credentials: \'aws-books\') {
-  ansible-playbook ansible/push_docker.yml
-}'''
+        sh 'ansible-playbook ansible/push_docker.yml'
         }
       }
     }
