@@ -1,14 +1,15 @@
 pipeline {
   agent any
+  environment {
+    AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+    AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+    AWS_DEFAULT_REGION    = 'us-west-2'
+  }
   stages {
     stage('Install Requirements') {
       steps {
         sh '''#!/bin/bash
-pip3 install --upgrade pip3
-pip3 install -r python/requirements.txt
-pip3 install ansible
-pip3 install docker
-'''
+python -m pip install -r python/requirements.txt --user'''
       }
     }
     stage('Test') {
@@ -19,13 +20,13 @@ make test'''
     }
     stage('Build Docker') {
       steps {
-        sh 'ansible-playbook ansible/build_docker.yml -e "ansible_python_interpreter=/usr/bin/python3"'
+        sh 'ansible-playbook ansible/build_docker.yml'
       }
     }
     stage('Push Docker') {
       steps {
-        sh 'ansible-playbook ansible/push_docker.yml -e "ansible_python_interpreter=/usr/bin/python3"'
+        sh 'ansible-playbook ansible/push_docker.yml'
+        }
       }
     }
   }
-}
