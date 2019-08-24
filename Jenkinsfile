@@ -15,12 +15,12 @@ make test'''
     }
     stage('Build Docker') {
       steps {
-        sh 'ansible-playbook ansible/build_docker.yml'
+        sh 'ansible-playbook ansible/build_docker.yml -b'
       }
     }
     stage('Push Docker') {
       steps {
-        sh 'ansible-playbook ansible/push_docker.yml -e "ansible_python_interpreter=/usr/bin/python3"'
+        sh 'ansible-playbook ansible/push_docker.yml'
       }
     }
   }
