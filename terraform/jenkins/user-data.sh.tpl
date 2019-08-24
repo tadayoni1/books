@@ -36,3 +36,14 @@ sudo apt-get install python -y
 # Install docker-python
 sudo apt install python-pip -y
 sudo pip install docker-py
+
+# Configure docker to run with different users
+sudo usermod -aG docker root
+sudo usermod -aG docker ubuntu
+sudo usermod -aG docker jenkins
+
+# Install awscli
+sudo python -m pip install awscli==1.13.0
+
+# Install boto3
+sudo apt install -y python-boto3

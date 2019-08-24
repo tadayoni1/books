@@ -4,7 +4,7 @@ data "template_file" "launch" {
 }
 
 resource "aws_launch_configuration" "lc" {
-  name_prefix          = "${var.EnvironmentName}-lc"
+  name_prefix          = "${var.EnvironmentName}-lc-"
   image_id             = "${var.jenkins_image_id}"
   instance_type        = "${var.jenkins_instance_type}"
   key_name             = "${var.jenkins_instance_key_name}"
