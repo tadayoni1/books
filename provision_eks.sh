@@ -13,10 +13,10 @@ if [ -z $TERRAFORM_MODE ]; then
   TERRAFORM_MODE="apply"
 fi
 
-pushd terraform
+pushd terraform/eks
 terraform init -backend-config="key=state/books/eks_backend_config"
 
-terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../secret.tfvars"
+terraform ${TERRAFORM_MODE} -var-file="variables.tfvars" -var-file="../../../secret.tfvars"
 
 if [ $TERRAFORM_MODE == 'apply' ]; then
 mkdir ~/terraform-books/
