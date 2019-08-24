@@ -15,7 +15,7 @@ make test'''
     }
     stage('Build Docker') {
       steps {
-        sh 'ansible-playbook ansible/build_docker.yml -b'
+        sh 'ansible-playbook ansible/build_docker.yml'
       }
     }
     stage('Push Docker') {
