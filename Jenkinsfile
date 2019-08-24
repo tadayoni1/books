@@ -4,7 +4,7 @@ pipeline {
     stage('Install Requirements') {
       steps {
         sh '''#!/bin/bash
-pip install -r python/requirements.txt'''
+python -m pip install -r python/requirements.txt'''
       }
     }
     stage('Test') {
