@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Install Jenkins
-sudo apt update -y
-sudo apt upgrade -y
+sudo ucf --purge /boot/grub/menu.lst
+sudo apt-get update -y
+sudo UCF_FORCE_CONFFNEW=YES apt-get upgrade -y
 sudo apt install -y default-jdk
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
