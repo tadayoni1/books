@@ -57,7 +57,6 @@ resource "aws_security_group_rule" "ingress_jenkins_server_http" {
 resource "aws_security_group" "jenkins_server" {
   name        = "${var.EnvironmentName}-sg-webserver"
   description = "Allow http traffic to/from Web Server"
-  vpc_id      = "${var.VPC_ID}"
 
   tags = {
     Name = "${var.EnvironmentName}-sg-web-server"
