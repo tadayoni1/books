@@ -51,7 +51,7 @@ sudo python -m pip install awscli==1.13.0
 sudo apt install -y python-boto3
 
 # Install kubectl
-sudo snap install -y kubectl --classic
+sudo snap install kubectl --classic
 
 # Install aws iam authenticator
 curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator
