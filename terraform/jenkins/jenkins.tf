@@ -21,7 +21,21 @@ resource "aws_launch_configuration" "lc" {
   }
 }
 
+resource "aws_launch_template" "lt" {
+  name = "${var.EnvironmentName}-lt"
+  image_id = "${var.jenkins_image_id}"
+  instance_type = "${var.jenkins_instance_type}"
 
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name = "${var.EnvironmentName}-jenkins"
+    }
+  }
+
+  user_data = "${data.template_file.launch.rendered}"
+}
 
 
 resource "aws_security_group_rule" "ingress_instance_ssh" {
