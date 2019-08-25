@@ -23,6 +23,13 @@ make test'''
         sh 'ansible-playbook ansible/push_docker.yml -vvv'
       }
     }
+    stage('') {
+      steps {
+        sh '''kubectl apply -f ~/.kube/config_map_aws_auth.yml
+kubectl create deployment books --image=$BOOKS_DOCKER_URI
+kubectl expose deployment books --type=LoadBalancer --port 8080 --target-port 8080'''
+      }
+    }
   }
   environment {
     AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
