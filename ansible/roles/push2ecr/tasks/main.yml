@@ -11,5 +11,5 @@
     push: yes
 
 - name: print docker image uri in ecr to env
-    environment:
-      BOOKS_DOCKER_URI: "{{my_repo.repository.repositoryUri}}:{{docker_image_version}}"
+  environment:
+    BOOKS_DOCKER_URI: "{{my_repo.repository.repositoryUri}}:{{docker_image_version}}"

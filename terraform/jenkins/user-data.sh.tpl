@@ -38,9 +38,11 @@ sudo apt install python-pip -y
 sudo pip install docker-py
 
 # Configure docker to run with different users
+sudo groupadd docker
 sudo usermod -aG docker root
 sudo usermod -aG docker ubuntu
 sudo usermod -aG docker jenkins
+newgrp docker
 
 # Install awscli
 sudo python -m pip install awscli==1.13.0
