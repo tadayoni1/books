@@ -26,7 +26,7 @@ make test'''
     stage('Deploy to EKS') {
       steps {
         sh '''kubectl apply -f ~/.kube/config_map_aws_auth.yml
-kubectl create deployment books --image=$BOOKS_DOCKER_URI
+while read line; do kubectl create deployment books --image=$line; done < /tmp/BOOKS_DOCKER_URI
 kubectl expose deployment books --type=LoadBalancer --port 8080 --target-port 8080'''
       }
     }
