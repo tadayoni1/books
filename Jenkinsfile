@@ -23,7 +23,7 @@ make test'''
         sh 'ansible-playbook ansible/push_docker.yml -vvv'
       }
     }
-    stage('') {
+    stage('Deploy to EKS') {
       steps {
         sh '''kubectl apply -f ~/.kube/config_map_aws_auth.yml
 kubectl create deployment books --image=$BOOKS_DOCKER_URI
