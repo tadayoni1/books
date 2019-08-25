@@ -34,7 +34,7 @@ resource "aws_launch_template" "lt" {
     }
   }
 
-  user_data = "${data.template_file.launch.rendered}"
+  user_data = "${base64encode(data.template_file.launch.rendered)}"
 }
 
 
