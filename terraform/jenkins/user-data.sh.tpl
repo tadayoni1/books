@@ -60,3 +60,8 @@ openssl sha1 -sha256 aws-iam-authenticator
 chmod +x ./aws-iam-authenticator
 mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+
+# Download eks config files from s3
+mkdir /var/lib/jenkins/.kube/
+aws s3 cp s3://books-terraform/eks/config /var/lib/jenkins/.kube/
+aws s3 cp s3://books-terraform/eks/config_map_aws_auth.yml /var/lib/jenkins/.kube/
