@@ -40,7 +40,9 @@ if kubectl get service books; then
 else
   echo 'creating service'
   kubectl expose deployment books --type=LoadBalancer --port 8080 --target-port 8080
-fi'''
+fi
+
+kubectl scale deployment/books --replicas=10'''
       }
     }
   }
