@@ -1,4 +1,11 @@
 ---
+- name: create docker image version
+  command: "$(git rev-parse --short HEAD)"
+  register: command_output
+
+- set_fact:
+    docker_image_version: "{{command_output.stdout}}"
+
 - name: create ecr_repository "{{repo_name}}"
   ecs_ecr: name="{{repo_name}}"
   register: my_repo

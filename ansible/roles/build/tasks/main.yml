@@ -1,4 +1,11 @@
 ---
+- name: create docker image version
+  command: "$(git rev-parse --short HEAD)"
+  register: command_output
+
+- set_fact:
+    docker_image_version: "{{command_output.stdout}}"
+
 - name: Build image
   docker_image:
     name: "{{docker_name}}"
