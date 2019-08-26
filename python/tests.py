@@ -12,7 +12,7 @@ from api._04_delete_method import app as app_step_4
 class Step1TestCase(unittest.TestCase):
     def setUp(self):
         self.app = app_step_1.test_client()
-        self.book_id = 34
+        self.book_id = 33
 
     def test_book_list(self):
         resp = self.app.get('/book')
