@@ -19,5 +19,6 @@ WIP: A sample project to implement a web api in kubernetes
 - create following creadentials in form of a secret text in jenkins
   - jenkins-aws-secret-key-id
   - jenkins-aws-secret-access-key
+- run `sudo systemctl restart jenkins` so jenkins can connect to docker
 
 Web api source: https://github.com/rmotr/flask-api-example
