@@ -26,7 +26,7 @@ resource "aws_launch_template" "lt" {
   image_id             = "${var.jenkins_image_id}"
   instance_type        = "${var.jenkins_instance_type}"
   key_name             = "${var.jenkins_instance_key_name}"
-  security_groups      = ["${aws_security_group.jenkins_server.id}"]
+  security_group_names = ["${aws_security_group.jenkins_server.name}"]
   user_data            = "${base64encode(data.template_file.launch.rendered)}"
 
   tag_specifications {
