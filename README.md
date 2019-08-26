@@ -4,6 +4,7 @@ A sample project to implement a web api in kubernetes.
 This project first deploys a Kubernetes cluster in AWS.
 Then a Jenkins pipeline lints the python web api application in the python folder, containerizes it, and uploads it to AWS ECR. After that it deploys the application to AWS EKS with a rolling update strategy.
 
+<img src="https://raw.githubusercontent.com/tadayoni1/books/master/screenshots/pipeline.PNG">
 
 ### Prerequisites
 
