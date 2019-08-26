@@ -22,9 +22,12 @@ resource "aws_launch_configuration" "lc" {
 }
 
 resource "aws_launch_template" "lt" {
-  name = "${var.EnvironmentName}-lt"
-  image_id = "${var.jenkins_image_id}"
-  instance_type = "${var.jenkins_instance_type}"
+  name                 = "${var.EnvironmentName}-lt"
+  image_id             = "${var.jenkins_image_id}"
+  instance_type        = "${var.jenkins_instance_type}"
+  key_name             = "${var.jenkins_instance_key_name}"
+  security_groups      = ["${aws_security_group.jenkins_server.id}"]
+  user_data            = "${base64encode(data.template_file.launch.rendered)}"
 
   tag_specifications {
     resource_type = "instance"
@@ -34,7 +37,6 @@ resource "aws_launch_template" "lt" {
     }
   }
 
-  user_data = "${base64encode(data.template_file.launch.rendered)}"
 }
 
 
