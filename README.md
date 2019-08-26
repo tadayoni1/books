@@ -1,5 +1,8 @@
 # books
-WIP: A sample project to implement a web api in kubernetes
+A sample project to implement a web api in kubernetes.
+
+This project first deploys a Kubernetes cluster in AWS.
+Then a Jenkins pipeline lints the python web api application in the python folder, containerizes it, and uploads it to AWS ECR. After that it deploys the application to AWS EKS with a rolling update strategy.
 
 
 ### Prerequisites
@@ -20,5 +23,9 @@ WIP: A sample project to implement a web api in kubernetes
   - jenkins-aws-secret-key-id
   - jenkins-aws-secret-access-key
 - run `sudo systemctl restart jenkins` so jenkins can connect to docker
+
+
+### Jenkins Pipeline
+After Kubernetes cluster is deployed and jenkins server is ready and configured, connect jenkins to the github repo and run the pipeline.
 
 Web api source: https://github.com/rmotr/flask-api-example
