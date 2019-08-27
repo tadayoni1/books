@@ -29,4 +29,5 @@ Then a Jenkins pipeline lints the python web api application in the python folde
 ### Jenkins Pipeline
 After Kubernetes cluster is deployed and jenkins server is ready and configured, connect jenkins to the github repo and run the pipeline.
 
-Web api source: https://github.com/rmotr/flask-api-example
+### other resources
+Python web application has been imported from https://github.com/rmotr/flask-api-example.
