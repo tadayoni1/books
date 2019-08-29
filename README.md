@@ -19,7 +19,7 @@ Then a Jenkins pipeline lints the python web api application in the python folde
 1. First we need to deploy an EKS cluster to AWS. It is done by terraform. 
     1. run `./provision_eks.sh`
 1. Then we need to deploy a jenkins server and then configure it. A launch template can be created by terraform that installs all the requirements for jenkins server to run the pipeline.
-    1. run `./provision_eks_lc.sh`
+    1. run `./provision_jenkins_lc.sh`
 1. After jenkins is running configure it and install all recommended plugins.
 1. Create following creadentials in form of a secret text in jenkins
     1. jenkins-aws-secret-key-id
