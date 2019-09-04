@@ -8,6 +8,7 @@ Then a Jenkins pipeline lints the python web api application in the python folde
 
 ### Prerequisites
 
+1. AWS Account
 1. A workstation(automation server) either local or on aws and install Terraform on it.
     1. The workstation should either have an IAM role with EC2 and VPC access or you need to install awscli and run `aws configure` and enter credentials that have access to create EC2 and VPC resources.
 1. Checkout the code to the automation server
