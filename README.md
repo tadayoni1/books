@@ -14,7 +14,7 @@ Then a Jenkins pipeline lints the python web api application in the python folde
 1. Checkout the code to the automation server
 1. In parent directory of the code folder create a file named `secret.tfvars` and enter the IP's which you want to limit eks access to.
     1. `my_workstations_ip = ["1.2.3.4/32", "5.6.7.8/32"]`
-1. An S3 bucket. The same bucket must be used in `provision_ekc_lc.sh` and `user-data.sh.tpl` for jenkins server.
+1. An S3 bucket. The same bucket must be used in `provision_ekc.sh` and `user-data.sh.tpl` for jenkins server.
 
 ### Deployment Steps
 1. First we need to deploy an EKS cluster to AWS. It is done by terraform. 
