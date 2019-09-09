@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# https://devops.stackexchange.com/a/1144
 sudo apt-get update -y
 sudo UCF_FORCE_CONFFNEW=YES apt-get upgrade -y
 
